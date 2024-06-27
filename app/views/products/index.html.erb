@@ -1,0 +1,13 @@
+<h1>
+  Welcome to Nur
+</h1>
+
+<div class="products-container">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <div class="product-name"><%= product.name %></div>
+      <div class="product-price">$<%= product.price %></div>
+      <div class="product-description"><%= product.description %></div>
+    </div>
+  <% end %>
+</div>
