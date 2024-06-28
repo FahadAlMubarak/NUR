@@ -13,6 +13,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     background-color: #bc8a5f;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 
     &:hover {
       transform: translateY(-5px); /* Add a slight lift effect on hover */
