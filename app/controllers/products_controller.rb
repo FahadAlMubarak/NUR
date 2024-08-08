@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
     @products = Product.all
     @products = Product.order(:created_at)
@@ -33,7 +33,11 @@ class ProductsController < ApplicationController
     redirect_to product_path(@product)
   end
 
-  
+  def destroy
+    @product.destroy
+    redirect_to products_path(@product), notice: 'Item was successfully deleted'
+  end
+
 
   private
   def set_product
