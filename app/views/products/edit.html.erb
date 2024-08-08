@@ -1,0 +1,8 @@
+<h2> Edit this item </h2>
+<%= simple_form_for(@product) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :product_category_id, as: :select, collection: ProductCategory.pluck(:name, :id), prompt: 'Select Category' %>
+  <%= f.button :submit %>
+  <% end %>

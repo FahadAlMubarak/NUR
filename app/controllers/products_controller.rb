@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :edit, :update]
   def index
     @products = Product.all
+    @products = Product.order(:created_at)
   end
 
   def show
@@ -22,12 +23,17 @@ class ProductsController < ApplicationController
 
   end
 
-  
+
+  def edit
+  end
+
 
   def update
-    @product = Product.find(set_product)
-    @product.update()
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
+
+  
 
   private
   def set_product
