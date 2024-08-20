@@ -1,30 +1,30 @@
-<div class="navbar">
+<div class="navbar" data-controller="navbar" >
   <ul>
-    <li class="list active">
+    <li class="list active" data-navbar-target="list" data-action="click->navbar#activeLink">
       <a href="#">
         <span class="icon"><i class="fa-solid fa-house"></i></span>
         <span class="text">Home</span>
       </a>
     </li>
-    <li class="list">
+    <li class="list" data-navbar-target="list" data-action="click->navbar#activeLink">
       <a href="#">
       <span class="icon"><i class="fa-solid fa-user"></i></span>
       <span class="text">Profile</span>
     </a>
     </li>
-    <li class="list">
+    <li class="list" data-navbar-target="list" data-action="click->navbar#activeLink">
       <a href="#">
       <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
       <span class="text">Cart</span>
     </a>
     </li>
-    <li class="list">
+    <li class="list" data-navbar-target="list" data-action="click->navbar#activeLink">
       <a href="#">
       <span class="icon"><i class="fa-solid fa-bars"></i></span>
       <span class="text">Burger</span>
     </a>
     </li>
-    <li class="list">
+    <li class="list" data-navbar-target="list" data-action="click->navbar#activeLink">
       <a href="#">
       <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></i></span>
       <span class="text">Search</span>
@@ -35,7 +35,7 @@
 </div>
 
 
-<script>
+<%# <script>
   const list = document.querySelectorAll('.list');
   function activeLink() {
     list.forEach((item) =>
@@ -44,4 +44,4 @@
   }
   list.forEach((item) =>
     item.addEventListener('click', activeLink));
-</script>
+</script> %>
